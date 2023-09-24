@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/rvlqh079n9k5ga2a/branch/master?svg=true)](https://ci.appveyor.com/project/Ilya8721/infogorodtest/branch/master)
+
 # Тестовое задание для ГКУ «Инфогород»
 
 ## Веб-сервис "МОСЭКОМОНИТОРИНГ"

@@ -12,6 +12,8 @@ environment:
   global:
     - SELENIDE_PAGE_LOAD_STRATEGY: eager
 
-build_script:
+install:
   - chmod +x gradlew
-  - ./gradlew test --info -Dselenide.headless=true
+
+build_script:
+  - ./gradlew test --info -Dselenide.headless=true -Dselenide.pageLoadStrategy=eager

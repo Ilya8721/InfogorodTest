@@ -12,9 +12,6 @@ environment:
   global:
     - SELENIDE_PAGE_LOAD_STRATEGY: eager
 
-install:
-  - ps: [Environment]::SetEnvironmentVariable("SELENIDE_PAGE_LOAD_STRATEGY", $env:SELENIDE_PAGE_LOAD_STRATEGY, [System.EnvironmentVariableTarget]::Machine)
-
 build_script:
   - chmod +x gradlew
   - ./gradlew test --info -Dselenide.headless=true

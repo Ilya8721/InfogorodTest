@@ -1,7 +1,9 @@
 package Page;
 
+import Helper.Screenshot;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Allure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +38,15 @@ public class MainPage {
     private ElementsCollection timeIntervalsCollection = $$x("//div[@class='multi-selector-input']/following-sibling::div//span[@class='checkmark']");
     private ElementsCollection frequencyOfSmellsCheckBoxes = $$x("//table//div[contains(text(), 'Вопрос 4/5')]/following-sibling::div//span[@class='checkmark']");
 
+
     public MainPage() {
-        title
-                .shouldBe(visible)
-                .shouldHave(text("ЭКОЛОГИЧЕСКАЯ СИТУАЦИЯ"));
+        Screenshot screenshot = new Screenshot();
+        Allure.step("Проверяем заголовок главной страницы", () -> {
+            title
+                    .shouldBe(visible)
+                    .shouldHave(text("ЭКОЛОГИЧЕСКАЯ СИТУАЦИЯ"));
+            screenshot.addScreenshotStep("Проверяем заголовок главной страницы");
+        });
     }
 
     public void enteringIntoTheAddressField() {
